@@ -1,0 +1,17 @@
+.DS_Store
+.idea/
+
+result.txt
+trace.txt
+
+parent
+child
+*.o
+
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
