@@ -1,0 +1,167 @@
+13379 execve("./parent", ["./parent"], 0xffffd2732fb8 /* 47 vars */) = 0
+13379 brk(NULL)                         = 0xc83361fec000
+13379 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe99763415000
+13379 faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (Нет такого файла или каталога)
+13379 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+13379 fstat(3, {st_mode=S_IFREG|0644, st_size=65515, ...}) = 0
+13379 mmap(NULL, 65515, PROT_READ, MAP_PRIVATE, 3, 0) = 0xe997633cf000
+13379 close(3)                          = 0
+13379 openat(AT_FDCWD, "/usr/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+13379 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\3101\2\0\0\0\0\0"..., 832) = 832
+13379 fstat(3, {st_mode=S_IFREG|0755, st_size=1788240, ...}) = 0
+13379 mmap(NULL, 1957440, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xe997631f1000
+13379 mmap(0xe99763200000, 1891904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xe99763200000
+13379 munmap(0xe997631f1000, 61440)     = 0
+13379 munmap(0xe997633ce000, 3648)      = 0
+13379 mprotect(0xe997633a9000, 81920, PROT_NONE) = 0
+13379 mmap(0xe997633bd000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ad000) = 0xe997633bd000
+13379 mmap(0xe997633c2000, 48704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xe997633c2000
+13379 mmap(0xe99763200000, 1740800, PROT_READ|PROT_EXEC|0x10, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xe99763200000
+13379 close(3)                          = 0
+13379 set_tid_address(0xe99763416388)   = 13379
+13379 set_robust_list(0xe99763416040, 24) = 0
+13379 rseq(0xe99763416740, 0x21, 0, 0xd428bc00) = 0
+13379 mprotect(0xe997633bd000, 12288, PROT_READ) = 0
+13379 mprotect(0xc8336030f000, 4096, PROT_READ) = 0
+13379 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xe99763413000
+13379 mprotect(0xe9976341d000, 8192, PROT_READ) = 0
+13379 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+13379 getrandom("\xa2\x4c\xdc\x61\x62\x52\x54\xc1", 8, GRND_NONBLOCK) = 8
+13379 munmap(0xe997633cf000, 65515)     = 0
+13379 fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x2), ...}) = 0
+13379 brk(NULL)                         = 0xc83361fec000
+13379 brk(0xc83362200000)               = 0xc83362200000
+13379 madvise(0xc83361fec000, 2179072, MADV_HUGEPAGE) = 0
+13379 fstat(0, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x2), ...}) = 0
+13379 write(1, "Enter output filename: ", 23) = 23
+13379 read(0, "result.txt\n", 1024)     = 11
+13379 pipe2([3, 4], 0)                  = 0
+13379 pipe2([5, 6], 0)                  = 0
+13379 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+13379 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD <unfinished ...>
+13383 set_robust_list(0xe99763416040, 24 <unfinished ...>
+13379 <... clone resumed>, child_tidptr=0xe99763416030) = 13383
+13383 <... set_robust_list resumed>)    = 0
+13379 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+13383 rt_sigprocmask(SIG_SETMASK, [] <unfinished ...>
+13379 <... rt_sigprocmask resumed>, NULL, 8) = 0
+13383 <... rt_sigprocmask resumed>, NULL, 8) = 0
+13379 getpid( <unfinished ...>
+13383 close(4 <unfinished ...>
+13379 <... getpid resumed>)             = 13379
+13383 <... close resumed>)              = 0
+13379 write(1, "PARENT PID=13379, CHILD PID=1338"..., 34 <unfinished ...>
+13383 close(5 <unfinished ...>
+13379 <... write resumed>)              = 34
+13383 <... close resumed>)              = 0
+13379 close(3 <unfinished ...>
+13383 dup3(3, 0, 0 <unfinished ...>
+13379 <... close resumed>)              = 0
+13383 <... dup3 resumed>)               = 0
+13379 close(6 <unfinished ...>
+13383 close(3 <unfinished ...>
+13379 <... close resumed>)              = 0
+13383 <... close resumed>)              = 0
+13379 read(0 <unfinished ...>
+13383 execve("./child", ["./child", "result.txt", "6"], 0xffffc6fe4088 /* 47 vars */) = 0
+13383 brk(NULL)                         = 0xc020323ea000
+13383 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xf95946d55000
+13383 faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (Нет такого файла или каталога)
+13383 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+13383 fstat(3, {st_mode=S_IFREG|0644, st_size=65515, ...}) = 0
+13383 mmap(NULL, 65515, PROT_READ, MAP_PRIVATE, 3, 0) = 0xf95946d0f000
+13383 close(3)                          = 0
+13383 openat(AT_FDCWD, "/usr/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+13383 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\3101\2\0\0\0\0\0"..., 832) = 832
+13383 fstat(3, {st_mode=S_IFREG|0755, st_size=1788240, ...}) = 0
+13383 mmap(NULL, 1957440, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xf95946b31000
+13383 mmap(0xf95946b40000, 1891904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xf95946b40000
+13383 munmap(0xf95946b31000, 61440)     = 0
+13383 munmap(0xf95946d0e000, 3648)      = 0
+13383 mprotect(0xf95946ce9000, 81920, PROT_NONE) = 0
+13383 mmap(0xf95946cfd000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ad000) = 0xf95946cfd000
+13383 mmap(0xf95946d02000, 48704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xf95946d02000
+13383 mmap(0xf95946b40000, 1740800, PROT_READ|PROT_EXEC|0x10, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xf95946b40000
+13383 close(3)                          = 0
+13383 set_tid_address(0xf95946d56388)   = 13383
+13383 set_robust_list(0xf95946d56040, 24) = 0
+13383 rseq(0xf95946d56740, 0x21, 0, 0xd428bc00) = 0
+13383 mprotect(0xf95946cfd000, 12288, PROT_READ) = 0
+13383 mprotect(0xc0201667f000, 4096, PROT_READ) = 0
+13383 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xf95946d53000
+13383 mprotect(0xf95946d5d000, 8192, PROT_READ) = 0
+13383 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+13383 getrandom("\x88\x58\x25\xef\x3d\x5a\x81\xd3", 8, GRND_NONBLOCK) = 8
+13383 munmap(0xf95946d0f000, 65515)     = 0
+13383 getpid()                          = 13383
+13383 getppid()                         = 13379
+13383 fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x2), ...}) = 0
+13383 brk(NULL)                         = 0xc020323ea000
+13383 brk(0xc02032600000)               = 0xc02032600000
+13383 madvise(0xc020323ea000, 2187264, MADV_HUGEPAGE) = 0
+13383 write(1, "CHILD PID=13383, PPID=13379\n", 28) = 28
+13383 openat(AT_FDCWD, "result.txt", O_WRONLY|O_CREAT|O_TRUNC, 0644) = 3
+13383 fstat(0, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+13383 read(0 <unfinished ...>
+13379 <... read resumed>, "123 3\n", 1024) = 6
+13379 write(4, "123 3\n", 6)            = 6
+13383 <... read resumed>, "123 3\n", 4096) = 6
+13379 read(5 <unfinished ...>
+13383 write(3, "41\n", 3)               = 3
+13383 write(6, "O", 1)                  = 1
+13379 <... read resumed>, "O", 1)       = 1
+13383 read(0 <unfinished ...>
+13379 write(1, "Command processed successfully\n", 31) = 31
+13379 read(0, "1233 3 1 23 5\n", 1024)  = 14
+13379 write(4, "1233 3 1 23 5\n", 14)   = 14
+13383 <... read resumed>, "1233 3 1 23 5\n", 4096) = 14
+13379 read(5 <unfinished ...>
+13383 write(3, "3\n", 2)                = 2
+13383 write(6, "O", 1 <unfinished ...>
+13379 <... read resumed>, "O", 1)       = 1
+13383 <... write resumed>)              = 1
+13383 read(0 <unfinished ...>
+13379 write(1, "Command processed successfully\n", 31) = 31
+13379 read(0, "1232333223232323232323233232 4\n", 1024) = 31
+13379 write(4, "1232333223232323232323233232 4\n", 31) = 31
+13383 <... read resumed>, "1232333223232323232323233232 4\n", 4096) = 31
+13379 read(5 <unfinished ...>
+13383 write(6, "I", 1)                  = 1
+13379 <... read resumed>, "I", 1)       = 1
+13383 read(0 <unfinished ...>
+13379 write(1, "Invalid input line\n", 19) = 19
+13379 read(0, "sdfdfds\n", 1024)        = 8
+13379 write(4, "sdfdfds\n", 8)          = 8
+13383 <... read resumed>, "sdfdfds\n", 4096) = 8
+13379 read(5 <unfinished ...>
+13383 write(6, "I", 1 <unfinished ...>
+13379 <... read resumed>, "I", 1)       = 1
+13383 <... write resumed>)              = 1
+13379 write(1, "Invalid input line\n", 19 <unfinished ...>
+13383 read(0 <unfinished ...>
+13379 <... write resumed>)              = 19
+13379 read(0, "1234 22 0\n", 1024)      = 10
+13379 write(4, "1234 22 0\n", 10)       = 10
+13383 <... read resumed>, "1234 22 0\n", 4096) = 10
+13379 read(5 <unfinished ...>
+13383 write(6, "Z", 1 <unfinished ...>
+13379 <... read resumed>, "Z", 1)       = 1
+13383 <... write resumed>)              = 1
+13379 write(1, "Division by zero.\n", 18 <unfinished ...>
+13383 close(3 <unfinished ...>
+13379 <... write resumed>)              = 18
+13383 <... close resumed>)              = 0
+13379 close(4 <unfinished ...>
+13383 close(6 <unfinished ...>
+13379 <... close resumed>)              = 0
+13383 <... close resumed>)              = 0
+13383 exit_group(1 <unfinished ...>
+13379 close(5 <unfinished ...>
+13383 <... exit_group resumed>)         = ?
+13379 <... close resumed>)              = 0
+13379 wait4(13383 <unfinished ...>
+13383 +++ exited with 1 +++
+13379 <... wait4 resumed>, NULL, 0, NULL) = 13383
+13379 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=13383, si_uid=1000, si_status=1, si_utime=0, si_stime=0} ---
+13379 exit_group(1)                     = ?
+13379 +++ exited with 1 +++
